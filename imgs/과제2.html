@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            padding: 30px;
+        }
+
+        .head img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            width: 500px;
+        }
+
+        .detail h2 {
+            display: inline;
+        }
+
+        .btn {
+            width:200px; 
+            display:block; 
+            margin-left:auto; 
+            margin-right:auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <img src="https://cdn.pixabay.com/photo/2014/10/27/19/18/shoes-505471_1280.jpg">
+    </div>
+    <div class="detail">
+        <h2>상품제목</h2>&nbsp;&nbsp;가격:1,000,000원 / 개
+        <br><br>
+        <p>이 상품은 요즘 아기들이 신발을 장시간 신었을 시 물집이 생기지 않도록 초경량 쿠션을 넣었고 최첨단 소새를 사용함과 동시에 원가 절감을 통해 가격을 경쟁사 대비 평균 10프로 낮추었습니다.</p>
+    </div>
+    <div class="order">
+        <h2>주문하기</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td>주문자 성함:</td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>수량:</td>
+                    <td>
+                        <div class="container">
+                                <select class="form-control">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>주소:</td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" aria-label="address"
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>전화번호:</td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" aria-label="phone_number"
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="btn">
+        <button type="button" class="btn btn-primary">주문하기</button>
+    </div>
+    
+
+</body>
+
+</html>

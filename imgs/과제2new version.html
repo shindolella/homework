@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Project document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+  <!-- JS -->   
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+		.headimage img{
+			display:block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		body { font-family:'바탕'; }
+
+		.font-test { font:bold 24pt '바탕'; }
+
+ 		.form-control {width: 400px;}
+    </style>
+
+}
+</head>
+<body>
+		<div class="headimage">
+		<!-- imgs 앞에 / 없어야 인식 -->
+		<img src="imgs/shoes.jpg" width="500px">
+	</div>
+
+	<div>
+    <span style="font:24pt '궁서체'">상품제목</span> &nbsp;&nbsp;&nbsp;가격: 1,000,000,000 / 개
+    <br><br><br>
+	</div>
+	<div>
+		이 상품은 요즘 아기들이 신발을 장시간 신었을시 물집이 생기지 않도록 초경량 쿠션을 넝었고 최첨단 소재를 사용함과 동시에 원가 절감을 통해 가격을 경쟁사 대비 10프로 낮추었습니다. 
+		<br><br>
+	</div>
+	<div>
+		<span style="font:24pt '궁서체'">주문하기</span>
+		<br><br>
+	</div>
+	<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">주문자성함</label>
+      <input type="text" class="form-control" id="inputEmail4" placeholder="홍길동">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">수량</label>
+      <input type="number" class="form-control" id="inputPassword4" placeholder="100개">
+
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">주소</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">주소 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">도시</label>
+      <input type="text" class="form-control" id="inputCity" placeholder="달성구">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputState">주</label>
+      <select id="inputState" class="form-control">
+        <option selected>사과</option>
+        <option>딸기</option>
+        <option>수박</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">우편번호</label>
+      <input type="text" class="form-control" id="inputZip" placeholder="111-111">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" style="display: block; margin-left: auto; margin-right: auto;">결제하기</button>
+</form>
+
+	
+</html>
