@@ -1,9 +1,9 @@
 from flask import Flask, render_template, jsonify, request
 app = Flask(__name__)
 
-articles = [] # global variable을 하나 만들기. 전체 함수에서 쓰일 변수
+orders = []
 
-## HTML을 주는 부분
+
 @app.route('/')
 def home():
    return 'This is Home!'
@@ -12,29 +12,26 @@ def home():
 def mypage():
    return render_template('index.html')
 
-## API 역할을 하는 부분
+
 @app.route('/post', methods=['POST'])
 def post():
-   global articles               # 이 함수 안에서 나오는 articles 글로벌 변수를 가리킵니다.
+   global orders
+   name_receive = request.form['name_receive']
+   amount_receive = request.form['amount_receive']
+   address_receive = request.form['address_receive']
+   contact_receive = request.form['contact_receive']
 
-   url_receive = request.form['url_give']          # 클라이언트로부터 url을 받는 부분
-   comment_receive = request.form['comment_give']  # 클라이언트로부터 comment를 받는 부분
-   category_receive = request.form['category_give']  # 클라이언트로부터 category를 받는 부분
+   orders = {'name':name_receive,'amount':amount_receive,'address':address_receive,'contact':contact_receive}
 
-   article = {'url': url_receive, 'comment': comment_receive, 'category_receive': category_receive}  # 받은 걸 딕셔너리로 만들고,
-   article_no = 1
-   article = {'url': url_receive, 'comment': comment_receive, 'category': category_receive,
-              'no': article_no}  # 받은 걸 딕셔너리로 만들고,
-
-   article_no = article_no + 1
-   articles.append(article)   # 넣는다
+   orders.append(order)
 
    return jsonify({'result':'success'})
 
 @app.route('/post', methods=['GET'])
 def view():
-   # 아직 안함
-   return jsonify({'result':'success'})
+   global orders
+   return jsonify({'result': 'success','orders': orders})
 
 if __name__ == '__main__':
-   app.run('0.0.0.0',port=5000,debug=True)
+   app.run('127.0.0.1',port=5000,debug=True)
+
