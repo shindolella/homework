@@ -21,7 +21,7 @@ def post():
    address_receive = request.form['address_receive']
    contact_receive = request.form['contact_receive']
 
-   orders = {'name':name_receive,'amount':amount_receive,'address':address_receive,'contact':contact_receive}
+   order = {'name':name_receive,'amount':amount_receive,'address':address_receive,'contact':contact_receive}
 
    orders.append(order)
 
