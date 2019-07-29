@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>신발판매</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->       
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        body {
+            padding: 30px;
+        }
+
+        .head img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            width: 500px;
+        }
+
+        .detail h2 {
+            display: inline;
+        }
+  div.card-columns{
+    width: 3000px;
+    margin: 10px auto 0 auto;
+        }
+
+  div.form-post {
+   max-width: 500px;
+   padding: 2rem;
+   margin: 2rem auto;
+   border-color: #e9ecef;
+   border-radius: 0.3rem;
+   border: solid;
+ }
+
+ .comment {
+   color: blue;
+   font-weight: bold;
+ }
+#posting-box {
+  display: none;
+}
+
+        .btn {
+            width:200px; 
+            display:block; 
+            margin-left:auto; 
+            margin-right:auto;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="head">
+        <img src="https://cdn.pixabay.com/photo/2014/10/27/19/18/shoes-505471_1280.jpg">
+    </div>
+  <div class="jumbotron">
+    <h1 class="display-4">전국의 모든 아기 <br>신발들이 모여있다!!!</h1>
+    <p class="lead"> 위 상품은 요즘 아기들이 신발을 장시간 신었을 시 물집이 생기지 않도록 초경량 쿠션을 넣었고 최첨단 소새를 사용함과 동시에 원가 절감을 통해 가격을 경쟁사 대비 평균 10프로 낮추었습니다.</p>
+    <hr class="my-4">
+    <p class="lead">
+
+
+    <button id="btn-posting-box" onclick="openclose()" type="button" class="btn btn-primary">주문 하기 </button>
+    </p>
+  </div>
+<div id="posting-box" class="form-post">
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">name </label>
+      <input id="posting-comment" class="form-control" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">amount </label>
+      <input id="posting-comment" class="form-control" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">address </label>
+      <input id="posting-comment" class="form-control" placeholder="">
+    </div>
+     <div class="form-group">
+      <label for="exampleFormControlTextarea1">contact </label>
+      <input id="posting-comment" class="form-control" placeholder="">
+    </div>
+    <button onclick="posting()" type="button" class="btn btn-primary">주문 하기</button>
+  </form>
+    </div>
+    <div id="cards-box" class="card-columns card-post">
+    <div class="card">
+      <div class="card-body">
+<!-- <div class="container"> -->
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>name</th>
+          <th>ammount</th>
+          <th>address</th>
+          <th>contact</th>
+        </tr>
+      </thead>
+    </table>
+<!-- </div> -->
+    </div>
+    </div>
+    </div>
+<script>
+function openclose() { 
+   // id 값 posting-box의 display 값이 block 이면
+    if ( $('#posting-box').css('display') == 'block' ) {
+      // posting-box를 가리고
+      $('#posting-box').hide();
+    } else {
+      // 아니면 posting-box를 펴라
+      $('#posting-box').show();
+    }
+
+}
+function openclose() {
+    if ( $('#posting-box').css('display') == 'block' ) {
+      $('#posting-box').hide();
+      $('#btn-posting-box').text('주문창 열기')
+    } else {
+      $('#posting-box').show();
+      $('#btn-posting-box').text('주문창 닫기')
+    }
+  }
+ function make_card(name,amount,address,contact){
+    let temp_html = '<div class="card">\
+         \
+          \
+          <p class="card-text comment">'+name+'</p>\
+           <p class="card-text comment">'+amount+'</p>\
+            <p class="card-text comment">'+address+'</p>\
+             <p class="card-text comment">'+contact+'</p>\
+        </div>\
+      </div>\
+    </div>';
+
+    $('#cards-box').append(temp_html);
+  }
+  function posting() {
+    alert('잘 되나 확인하기!');
+}
+
+function posting() {
+    // 읽기
+    let name = $('#posting-name').val();
+    let ammount = $('#posting-ammount').val();
+    let address = $('#posting-address').val();
+    let contact = $('#posting-contact').val();
+    // 잘 읽었는지, alert 창으로 확인
+    alert(name + ' / ' + ammount + ' / ' + address + ' / ' + contact );
+  }
+function posting() {
+    // 읽기
+    let name = $('#posting-name').val();
+    let ammount = $('#posting-ammount').val();
+    let address = $('#posting-address').val();
+    let contact = $('#posting-contact').val();
+
+
+    // 우리가 크롬 콘솔창에서 썼던 그 코드!
+    $.ajax({
+      type: "POST", // POST 방식으로 요청하겠다.
+      url: "/post", // /post라는 url에 요청하겠다.
+      data: { name_give: name, ammount_give: ammount, address_give: address, contact_give: contact}, // 데이터를 주는 방법
+      success: function(response){ // 성공하면
+        if (response['result'] == 'success') {
+          alert('주문 성공!');
+          window.location.reload();
+        } else {
+          alert('주문 오류!')
+        }
+      }
+    })
+  }
+   // function posting() {
+   //  alert('감사합니다!');
+window.onload=function(){
+    get_posting();
+}
+// function get_posting() {
+//   $.ajax({
+//     type: "GET",
+//     url: "/post",
+//     data: {},
+//     success: function(response){
+//       console.log(response)
+//     }
+//   })
+// }
+function get_posting() {
+    $('#cards-box').empty('');
+    $.ajax({
+      type: "GET",
+      url: "/post",
+      data: {},
+      success: function(response)
+      {
+        console.log(response)
+        let cards = response['orders'];
+        for (let i = 0 ; i < cards.length; i++) {
+          let name = cards[i]['name'];
+          let amount = cards[i]['ammount'];
+          let address = cards[i]['address'];
+          let contact = cards[i]['contact'];
+
+
+          make_card(name,ammount,address,contact);
+        }
+      }
+    })
+  }
+  function get_posting() {
+    alert('환영합니다~');
+  }
+  window.onload=function(){
+    get_posting();
+}
+</script>
+</body>
+</html>
